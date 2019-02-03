@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@material/snackbar": "^0.43.0",
+    "@material/react-button": "^0.9.0",
     "classnames": "^2.2.5",
     "react": "^16.4.2"
   },
