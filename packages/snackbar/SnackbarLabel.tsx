@@ -3,22 +3,21 @@ import * as classnames from 'classnames';
 
 export interface SnackbarLabelProps extends React.HTMLProps<HTMLDivElement> {
     className?: string,
-    label: string,
-    role: string,
-    ariaLive: 'off' | 'assertive' | 'polite'
+    role?: string,
+    ariaLive?: React.HTMLAttributes<HTMLDivElement>['aria-live']
 }
 
 const SnackbarLabel: (props: SnackbarLabelProps) => 
     React.ReactElement<HTMLDivElement> =({
         /* eslint-disable react/prop-types */
         className = '',
-        label,
-        role,
-        ariaLive,
+        role = 'status',
+        children,
+        ariaLive = 'polite' as React.HTMLAttributes<HTMLDivElement>['aria-live'],
         ...otherProps
         /* eslint-enable react/prop-types */
     }) => (
-        <div className={classnames(className, 'mdc-snackbar__label')} role={role ? role: 'status'} aria-live={ariaLive} {...otherProps}>{label}</div>
+        <div className={classnames(className, 'mdc-snackbar__label')} role={role} aria-live={ariaLive} {...otherProps}>{children}</div>
     )
 
 export default SnackbarLabel;
