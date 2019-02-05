@@ -1,0 +1,21 @@
+{
+  "name": "@whatoplay/react-slider",
+  "version": "0.9.0",
+  "description": "Material Components React Slider",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "keywords": [
+    "mdc web react",
+    "material components react",
+    "material design",
+    "slider"
+  ],
+  "dependencies": {
+    "@material/slider": "0.43.0",
+    "classnames": "^2.2.5",
+    "react": "^16.4.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
