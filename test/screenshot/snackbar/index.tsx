@@ -6,7 +6,10 @@ import '../../../packages/icon-button/index.scss';
 const SnackbarTests: React.FunctionComponent = () => {
   return (
     <div>
-      <Snackbar open={true} timeoutMs={10000}>
+      <Snackbar
+        open={true}
+        notifyClosed={(reason) => console.log(reason)}
+        timeoutMs={10000}>
         <SnackbarLabel>my label</SnackbarLabel>
         <SnackbarActions>
           <SnackbarActionButton>

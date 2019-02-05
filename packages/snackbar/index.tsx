@@ -12,8 +12,8 @@ type SnackbarProps = {
   className?: string;
   notifyOpening?: () => void;
   notifyOpened?: () => void;
-  notifyClosing?: (reason: string) => string;
-  notifyClosed?: (reason: string) => string;
+  notifyClosing?: (reason: string) => void;
+  notifyClosed?: (reason: string) => void;
   closeOnEscape?: boolean;
   timeoutMs? : number;
   onKeyDown?: React.KeyboardEventHandler<HTMLElement>
