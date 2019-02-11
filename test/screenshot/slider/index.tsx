@@ -3,12 +3,15 @@ import '../../../packages/slider/index.scss';
 
 import Slider from '../../../packages/slider/index';
 
-const SliderScreenShotTests: React.FunctionComponent = () => {
-  return (
-    <Slider valueMin={0} valueMax={10} valueNow={0}
-      notifyChange={(value: number) => console.log(value)}
-      notifyInput={() => console.log('input')}/>
-  );
+class SliderScreenShotTests extends React.Component<{}, {valueNow: number}> {
+  state = {valueNow: 0};
+
+  render() {
+    return (
+      <Slider valueMin={0} valueMax={10} valueNow={this.state.valueNow}
+      notifyInput={(valueNow) => this.setState({valueNow})}/>
+    )
+  }
 };
 
 export default SliderScreenShotTests;

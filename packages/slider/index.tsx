@@ -13,7 +13,7 @@ import SliderTrackMarker from './SliderTrackMarker';
 export interface SliderProps extends React.HTMLAttributes<HTMLDivElement> {
   [key: string]: any,
   className?: string,
-  notifyInput?: () => void,
+  notifyInput?: (value: number) => void,
   notifyChange?: (value: number) => void,
   valueMin: number,
   valueMax: number,
@@ -139,7 +139,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
         window.removeEventListener('resize', handler);
       },
       notifyInput: () => {
-        this.props.notifyInput && this.props.notifyInput();
+        this.props.notifyInput && this.props.notifyInput(this.getValue());
       },
       notifyChange: () => {
         this.props.notifyChange && this.props.notifyChange(this.getValue());
@@ -242,7 +242,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
     } = this.props;
     /* const {sliderAttributes} = this.state; */
     return (
-      <div tabIndex={tabIndex} aria-valuenow={valueNow} aria-valuemin={valueMin} aria-valuemax={valueMax} ref={this.sliderElement} className={this.classes} role="slider" /* {...sliderAttributes} */ {...otherProps} aria-disabled={disabled}>
+      <div className={this.classes} tabIndex={tabIndex} aria-valuenow={valueNow} aria-valuemin={valueMin} aria-valuemax={valueMax} ref={this.sliderElement} role="slider" /* {...sliderAttributes} */ {...otherProps} aria-disabled={disabled}>
         <div className="mdc-slider__track-container">
           <div style={this.state.sliderTrackStyle} className="mdc-slider__track"></div>
         </div>
