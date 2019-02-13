@@ -2,7 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 // @ts-ignore no .d.ts file
-import {MDCSliderFoundation, MDCSliderAdapter, strings} from '@material/slider/dist/mdc.slider';
+import {MDCSliderFoundation, MDCSliderAdapter} from '@material/slider/dist/mdc.slider';
 
 /* eslint-disable no-unused-vars */
 
@@ -43,7 +43,6 @@ interface SliderState {
 }
 
 class Slider extends React.Component<SliderProps, SliderState> {
-
   foundation: MDCSliderFoundation;
   sliderElement: React.RefObject<HTMLDivElement> = React.createRef();
   thumbContainerElement: React.RefObject<HTMLDivElement> = React.createRef();
@@ -54,14 +53,14 @@ class Slider extends React.Component<SliderProps, SliderState> {
     left: 0,
     right: 0,
     top: 0,
-    width: 0
+    width: 0,
   }
   markerArray: Array<React.ReactElement<HTMLDivElement>> = [];
 
   static defaultProps: Partial<SliderProps> = {
     step: 0,
     disabled: false,
-    tabIndex: 0
+    tabIndex: 0,
   };
 
   state: SliderState = {
@@ -78,7 +77,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
     sliderThumbStyle: {},
     sliderTrackStyle: {},
     sliderLastTrackMarkerStyle: {},
-    markerValue: 0
+    markerValue: 0,
   };
 
   get adapter(): Partial<MDCSliderAdapter> {
@@ -172,7 +171,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
       },
       isRTL: (): boolean => {
         return this.props.dir === 'rtl';
-      }
+      },
     };
   }
   get classes(): string {
@@ -192,8 +191,23 @@ class Slider extends React.Component<SliderProps, SliderState> {
   componentWillUnmount() {
     this.foundation.destroy();
   }
-  componentDidUpdate(/* prevProps: SliderProps */) {
-    
+  componentDidUpdate(prevProps: SliderProps) {
+    const {valueNow, valueMax, valueMin, step, disabled} = this.props;
+    if (prevProps.valueNow !== valueNow) {
+      this.setValue(valueNow);
+    }
+    if (prevProps.valueMax !== valueMax) {
+      this.setMax(valueMax);
+    }
+    if (prevProps.valueMin !== valueMin) {
+      this.setMin(valueMin);
+    }
+    if (prevProps.step !== step) {
+      this.setStep(step!);
+    }
+    if (prevProps.disabled !== disabled) {
+      this.setDisabled(disabled!);
+    }
   }
   getValue = (): number => {
     return this.foundation.getValue();
@@ -225,8 +239,12 @@ class Slider extends React.Component<SliderProps, SliderState> {
   setDisabled = (disabled: boolean) => {
     this.foundation.setDisabled(disabled);
   }
+  handleLayout = (): void => {
+    this.foundation.layout();
+  }
   render() {
     const {
+      /* eslint-disable no-unused-vars */
       children,
       className,
       notifyInput,
@@ -239,21 +257,32 @@ class Slider extends React.Component<SliderProps, SliderState> {
       valueMax,
       taxIndex,
       ...otherProps
+      /* eslint-enable no-unused-vars */
     } = this.props;
     /* const {sliderAttributes} = this.state; */
     return (
-      <div className={this.classes} tabIndex={tabIndex} aria-valuenow={valueNow} aria-valuemin={valueMin} aria-valuemax={valueMax} ref={this.sliderElement} role="slider" /* {...sliderAttributes} */ {...otherProps} aria-disabled={disabled}>
-        <div className="mdc-slider__track-container">
-          <div style={this.state.sliderTrackStyle} className="mdc-slider__track"></div>
+      <div className={this.classes}
+        tabIndex={tabIndex}
+        aria-valuenow={valueNow}
+        aria-valuemin={valueMin}
+        aria-valuemax={valueMax}
+        ref={this.sliderElement}
+        role='slider'
+        {...otherProps}
+        aria-disabled={disabled}>
+        <div className='mdc-slider__track-container'>
+          <div style={this.state.sliderTrackStyle} className='mdc-slider__track'></div>
         </div>
-        <div ref={this.thumbContainerElement} style={this.state.sliderThumbStyle} className="mdc-slider__thumb-container">
-          <svg className="mdc-slider__thumb" width={21} height={21}>
-            <circle cx="10.5" cy="10.5" r="7.875" />
+        <div ref={this.thumbContainerElement}
+          style={this.state.sliderThumbStyle}
+          className='mdc-slider__thumb-container'>
+          <svg className='mdc-slider__thumb' width={21} height={21}>
+            <circle cx='10.5' cy='10.5' r='7.875' />
           </svg>
-          <div className="mdc-slider__focus-ring"></div>
+          <div className='mdc-slider__focus-ring'></div>
         </div>
       </div>
-    )
+    );
   }
 }
 
