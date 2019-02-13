@@ -9,8 +9,8 @@ class SliderScreenShotTests extends React.Component<{}, {valueNow: number}> {
   render() {
     return (
       <Slider valueMin={0} valueMax={10} valueNow={this.state.valueNow}
-      notifyInput={(valueNow) => this.setState({valueNow})}/>
-    )
+        notifyInput={(valueNow) => this.setState({valueNow})}/>
+    );
   }
 };
 
