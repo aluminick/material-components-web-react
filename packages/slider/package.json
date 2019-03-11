@@ -1,6 +1,6 @@
 {
   "name": "@whatoplay/react-slider",
-  "version": "0.9.1",
+  "version": "0.9.3",
   "description": "Material Components React Slider",
   "license": "MIT",
   "main": "dist/index.js",

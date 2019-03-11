@@ -1,11 +1,8 @@
-import * as React from 'react';
+/* import * as React from 'react';
 
-export interface SliderTrackMarkerContainerProps {
-  children: React.ReactNode
-}
-
-const SliderTrackMarkerContainer: React.FunctionComponent<SliderTrackMarkerContainerProps> = ({children}) => (
+const SliderTrackMarkerContainer: React.FunctionComponent = ({children}) => (
   <div className='mdc-slider__track-marker-container'>{children}</div>
 );
 
 export default SliderTrackMarkerContainer;
+ */

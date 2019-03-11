@@ -47,6 +47,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
   sliderElement: React.RefObject<HTMLDivElement> = React.createRef();
   thumbContainerElement: React.RefObject<HTMLDivElement> = React.createRef();
 
+  isComponentMounted: boolean = false;
   sliderBoundingClientRect: ClientRect = {
     bottom: 0,
     height: 0,
@@ -146,12 +147,16 @@ class Slider extends React.Component<SliderProps, SliderState> {
       setThumbContainerStyleProperty: (propertyName: string, value: string | number) => {
         const {sliderThumbStyle} = this.state;
         const updatedSliderThumbStyle = Object.assign({}, sliderThumbStyle, {[propertyName]: value});
-        this.setState({sliderThumbStyle: updatedSliderThumbStyle});
+        if (this.isComponentMounted) {
+          this.setState({sliderThumbStyle: updatedSliderThumbStyle});
+        }
       },
       setTrackStyleProperty: (propertyName: string, value: string | number) => {
         const {sliderTrackStyle} = this.state;
         const updatedSliderTrackStyle = Object.assign({}, sliderTrackStyle, {[propertyName]: value});
-        this.setState({sliderTrackStyle: updatedSliderTrackStyle});
+        if (this.isComponentMounted) {
+          this.setState({sliderTrackStyle: updatedSliderTrackStyle});
+        }
       },
       setMarkerValue: (value: number) => {
         this.setState({markerValue: value});
@@ -180,6 +185,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
     return classnames('mdc-slider', Array.from(classList), className);
   }
   componentDidMount() {
+    this.isComponentMounted = true;
     this.foundation = new MDCSliderFoundation(this.adapter);
     this.foundation.init();
     this.setValue(this.props.valueNow);
@@ -189,6 +195,7 @@ class Slider extends React.Component<SliderProps, SliderState> {
     this.setDisabled(this.props.disabled!);
   }
   componentWillUnmount() {
+    this.isComponentMounted = false;
     this.foundation.destroy();
   }
   componentDidUpdate(prevProps: SliderProps) {
