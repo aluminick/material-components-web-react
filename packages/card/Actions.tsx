@@ -20,8 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
+
+import {CSS_CLASSES} from './constant';
 
 export interface ActionsProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
@@ -31,8 +33,8 @@ export interface ActionsProps extends React.HTMLProps<HTMLDivElement> {
 const Actions: React.FunctionComponent<ActionsProps> = ({
   className = '', children, fullBleed = false, ...otherProps // eslint-disable-line react/prop-types
 }) => {
-  const classes = classnames('mdc-card__actions', className, {
-    'mdc-card__actions--full-bleed': fullBleed,
+  const classes = classnames(CSS_CLASSES.ACTIONS, className, {
+    [CSS_CLASSES.ACTIONS_FULL_BLEED]: fullBleed,
   });
   return (
     <div className={classes} {...otherProps}>

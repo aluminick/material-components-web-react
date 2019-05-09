@@ -1,6 +1,6 @@
 {
   "name": "@material/react-top-app-bar",
-  "version": "0.11.0",
+  "version": "0.12.1",
   "description": "Material Components React Top App Bar",
   "license": "MIT",
   "main": "dist/index.js",
@@ -12,9 +12,13 @@
     "top app bar",
     "topappbar"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/material-components/material-components-web-react.git"
+  },
   "dependencies": {
-    "@material/react-ripple": "^0.9.0",
-    "@material/top-app-bar": "^0.44.0",
+    "@material/react-ripple": "^0.12.0",
+    "@material/top-app-bar": "^1.1.0",
     "classnames": "^2.2.6",
     "react": "^16.4.2"
   },

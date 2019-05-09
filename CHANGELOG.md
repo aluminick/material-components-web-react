@@ -1,4 +1,44 @@
-# [](https://github.com/material-components/material-components-web-react/compare/v0.10.0...v) (2019-03-19)
+<a name="0.12.1"></a>
+# [0.12.1](https://github.com/material-components/material-components-web-react/compare/v0.12.0...v0.12.1) (2019-05-08)
+
+
+### Bug Fixes
+
+* **fab:** Made initRipple and unbounded props optional ([#854](https://github.com/material-components/material-components-web-react/issues/854)) ([baca67b](https://github.com/material-components/material-components-web-react/commit/baca67b))
+* **infrastructure:** fix postinstall ([#842](https://github.com/material-components/material-components-web-react/issues/842)) ([5077078](https://github.com/material-components/material-components-web-react/commit/5077078))
+
+
+### Features
+
+* **button:** define CSS_CLASSES ([#838](https://github.com/material-components/material-components-web-react/issues/838)) ([cbf6cc5](https://github.com/material-components/material-components-web-react/commit/cbf6cc5))
+* **text-field**: Sync inputComponent when component is updated ([#848](https://github.com/material-components/material-components-web-react/issues/848)) ([2b954fa
+](https://github.com/material-components/material-components-web-react/commit/2b954fa
+))
+
+
+
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/material-components/material-components-web-react/compare/v0.11.0...v0.12.0) (2019-05-01)
+
+
+### Bug Fixes
+* **list** make listitem props optional ([#766](https://github.com/material-components/material-components-web-react/issues/766)) ([ffd7776](https://github.com/material-components/material-components-web-react/commit/ffd7776))
+* **top-app-bar** change scrollTop to offsetTop in getViewportScrollY ( ([#832](https://github.com/material-components/material-components-web-react/issues/832)) ([a207b0d](https://github.com/material-components/material-components-web-react/commit/a207b0d))
+* Ensure all package.json files have a link to the repo ([#807](https://github.com/material-components/material-components-web-react/issues/807)) ([10f2614](https://github.com/material-components/material-components-web-react/commit/10f2614))
+* Remove MDCTextfield Constant External ([#803](https://github.com/material-components/material-components-web-react/issues/803)) ([2269920](https://github.com/material-components/material-components-web-react/commit/2269920))
+
+
+### Features
+
+* update mdcweb v1.x.x ([#830](https://github.com/material-components/material-components-web-react/issues/830)) ([0f63a69](https://github.com/material-components/material-components-web-react/commit/0f63a69))
+
+
+### BREAKING CHANGES
+
+* Text-field, select, list have API changes. Please see PR #830 for more details.
+
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/material-components/material-components-web-react/compare/v0.10.0...v0.11.0) (2019-03-19)
 
 
 ### Bug Fixes
@@ -25,8 +65,7 @@
 * **tab:** implement setFocusOnActivate ([#722](https://github.com/material-components/material-components-web-react/issues/722)) ([fcd480d](https://github.com/material-components/material-components-web-react/commit/fcd480d))
 * **top-app-bar:** add children components for composition ([f3454b6](https://github.com/material-components/material-components-web-react/commit/f3454b6))
 
-
-
+<a name="0.10.0"></a>
 # [0.10.0](https://github.com/material-components/material-components-web-react/compare/v0.9.3...v0.10.0) (2019-02-19)
 
 
@@ -61,6 +100,7 @@
 
 
 
+<a name="0.9.3"></a>
 ## [0.9.3](https://github.com/material-components/material-components-web-react/compare/v0.9.2...v0.9.3) (2019-02-14)
 
 
@@ -70,14 +110,17 @@
 
 
 
+<a name="0.9.2"></a>
 ## [0.9.2](https://github.com/material-components/material-components-web-react/compare/v0.9.1...v0.9.2) (2019-01-30)
 
 
 
+<a name="0.9.1"></a>
 ## [0.9.1](https://github.com/material-components/material-components-web-react/compare/v0.9.0...v0.9.1) (2019-01-30)
 
 
 
+<a name="0.9.0"></a>
 # [0.9.0](https://github.com/material-components/material-components-web-react/compare/v0.8.0...v0.9.0) (2019-01-23)
 
 
@@ -97,6 +140,7 @@
 
 
 
+<a name="0.8.0"></a>
 # [0.8.0](https://github.com/material-components/material-components-web-react/compare/v0.7.1...v0.8.0) (2018-12-28)
 
 
@@ -150,6 +194,7 @@
 
 
 
+<a name="0.7.1"></a>
 ## [0.7.1](https://github.com/material-components/material-components-web-react/compare/v0.6.2...v0.7.1) (2018-11-30)
 
 
@@ -176,6 +221,7 @@
 
 
 
+<a name="0.6.2"></a>
 ## [0.6.2](https://github.com/material-components/material-components-web-react/compare/v0.6.0...v0.6.2) (2018-11-07)
 
 
@@ -210,6 +256,7 @@
 
 
 
+<a name="0.6.0"></a>
 # [0.6.0](https://github.com/material-components/material-components-web-react/compare/v0.5.1...v0.6.0) (2018-10-24)
 
 
@@ -239,6 +286,7 @@
 
 
 
+<a name="0.5.1"></a>
 ## [0.5.1](https://github.com/material-components/material-components-web-react/compare/v0.5.0...v0.5.1) (2018-09-25)
 
 
@@ -248,6 +296,7 @@
 
 
 
+<a name="0.5.0"></a>
 # [0.5.0](https://github.com/material-components/material-components-web-react/compare/v0.4.2...v0.5.0) (2018-09-25)
 
 
@@ -285,10 +334,12 @@
 
 
 
+<a name="0.4.2"></a>
 ## [0.4.2](https://github.com/material-components/material-components-web-react/compare/v0.4.1...v0.4.2) (2018-08-14)
 
 
 
+<a name="0.4.1"></a>
 ## [0.4.1](https://github.com/material-components/material-components-web-react/compare/v0.4.0...v0.4.1) (2018-08-13)
 
 
@@ -314,6 +365,7 @@
 
 
 
+<a name="0.4.0"></a>
 # [0.4.0](https://github.com/material-components/material-components-web-react/compare/v0.3.0...v0.4.0) (2018-07-30)
 
 
@@ -328,7 +380,7 @@
 * point packages to MDC Web /dist ES5 files ([#182](https://github.com/material-components/material-components-web-react/issues/182)) ([9d387d3](https://github.com/material-components/material-components-web-react/commit/9d387d3))
 
 
-### chore
+### Chores
 
 * **fab:** Pass icon as a prop, not a child element ([#159](https://github.com/material-components/material-components-web-react/issues/159)) ([1569f97](https://github.com/material-components/material-components-web-react/commit/1569f97))
 
@@ -348,6 +400,7 @@
 
 
 
+<a name="0.3.0"></a>
 # [0.3.0](https://github.com/material-components/material-components-web-react/compare/v0.2.0...v0.3.0) (2018-06-25)
 
 
@@ -371,6 +424,7 @@
 
 
 
+<a name="0.2.0"></a>
 # [0.2.0](https://github.com/material-components/material-components-web-react/compare/v0.1.0...v0.2.0) (2018-06-01)
 
 
@@ -390,6 +444,7 @@
 
 
 
+<a name="0.1.0"></a>
 # [0.1.0](https://github.com/material-components/material-components-web-react/compare/5fd6d86...v0.1.0) (2018-05-09)
 
 

@@ -20,30 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// TODO: remove this when MDC Web types are added.
+const CSS_CLASSES = {
+  ROOT: 'mdc-fab',
+  ICON: 'mdc-fab__icon',
+  LABEL: 'mdc-fab__label',
+  MINI: 'mdc-fab--mini',
+  EXTENDED: 'mdc-fab--extended',
+  EXITED: 'mdc-fab--exited',
+};
 
-export interface IMDCSnackbarAdapter {
-    addClass(className: string): void
-    removeClass(className: string): void
-    announce(): void
-    notifyOpening(): void
-    notifyOpened(): void
-    notifyClosing(reason: string): void
-    notifyClosed(reason: string): void
-}
-
-export interface IMDCSnackbarFoundation {
-    open(): void;
-    close(action: string): void;
-    isOpen(): boolean
-    getTimeoutMs(): number
-    setTimeoutMs(timeoutMs: number): void
-    getCloseOnEscape(): boolean
-    setCloseOnEscape(closeOnEscape: boolean): void
-    handleKeyDown(event: KeyboardEvent): void
-    handleActionButtonClick(event: MouseEvent): void
-    handleActionIconClick(event: MouseEvent): void
-    init(): void
-    destroy(): void
-    adapter_: IMDCSnackbarAdapter
-}
+export {CSS_CLASSES};

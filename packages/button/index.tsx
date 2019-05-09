@@ -20,16 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import * as Ripple from '@material/react-ripple';
+import {withRipple, InjectedProps} from '@material/react-ripple';
 
-const BUTTON_CLASS_NAME = 'mdc-button__icon';
+import {CSS_CLASSES} from './constant';
 
 type ButtonTypes = HTMLAnchorElement | HTMLButtonElement;
 
 export interface ButtonProps<T extends ButtonTypes>
-  extends Ripple.InjectedProps<T>, React.AnchorHTMLAttributes<T>, React.ButtonHTMLAttributes<T> {
+  extends InjectedProps<T>, React.AnchorHTMLAttributes<T>, React.ButtonHTMLAttributes<T> {
     raised?: boolean;
     unelevated?: boolean;
     outlined?: boolean;
@@ -63,11 +63,11 @@ export const Button = <T extends ButtonTypes>(
   }: ButtonProps<T>
 ) => {
   const props = {
-    className: classnames('mdc-button', className, {
-      'mdc-button--raised': raised,
-      'mdc-button--unelevated': unelevated,
-      'mdc-button--outlined': outlined,
-      'mdc-button--dense': dense,
+    className: classnames(CSS_CLASSES.ROOT, className, {
+      [CSS_CLASSES.RAISED]: raised,
+      [CSS_CLASSES.UNELEVATED]: unelevated,
+      [CSS_CLASSES.OUTLINED]: outlined,
+      [CSS_CLASSES.DENSE]: dense,
     }),
     ref: initRipple,
     disabled,
@@ -78,7 +78,7 @@ export const Button = <T extends ButtonTypes>(
     return (
       <a {...props as React.HTMLProps<HTMLAnchorElement>} href={href}>
         {!trailingIcon ? renderIcon(icon) : null}
-        <span className='mdc-button__label'>
+        <span className={CSS_CLASSES.LABEL}>
           {children}
         </span>
         {trailingIcon ? renderIcon(trailingIcon) : null}
@@ -89,7 +89,7 @@ export const Button = <T extends ButtonTypes>(
   return (
     <button {...props as React.HTMLProps<HTMLButtonElement>}>
       {!trailingIcon ? renderIcon(icon) : null}
-      <span className='mdc-button__label'>
+      <span className={CSS_CLASSES.LABEL}>
         {children}
       </span>
       {trailingIcon ? renderIcon(trailingIcon) : null}
@@ -100,7 +100,7 @@ export const Button = <T extends ButtonTypes>(
 const renderIcon = (icon?: React.ReactElement<React.HTMLProps<HTMLOrSVGElement>>) => (
   icon ?
     React.cloneElement(icon, {
-      className: classnames(BUTTON_CLASS_NAME, icon.props.className),
+      className: classnames(CSS_CLASSES.ICON, icon.props.className),
     }) :
     null
 );
@@ -109,5 +109,5 @@ Button.defaultProps = {
   initRipple: () => {},
 };
 
-export default Ripple.withRipple<ButtonProps<ButtonTypes>, ButtonTypes>(Button);
+export default withRipple<ButtonProps<ButtonTypes>, ButtonTypes>(Button);
 
